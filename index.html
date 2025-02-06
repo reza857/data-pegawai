@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pegawai</title>
+    <style>
+    h2{
+        font-family: sans-serif;
+        font-weight: bold;
+        text-align: center;
+        position: relative;
+        top: 50px;
+        font-size: 40px;
+        text-decoration: underline;
+        color: crimson;
+        letter-spacing: 6px;
+    }
+
+    table{
+        position: relative;
+        top: 100px;
+        border: cyan solid 1px;
+    }
+
+    th, td{
+        padding: 14px 22px;
+        text-align: center;
+        font-family: sans-serif;
+    }
+
+    th{
+        background-color: darkcyan;
+        color: wheat;
+    }
+
+    .data{
+        background-color: black;
+        color: azure;
+    }
+    tr:hover {
+        background-color: cornflowerblue;
+        color: black;
+    }
+    </style>
+</head>
+<body>
+    <h2>Data Pegawai</h2>
+
+    <table border="1" cellspacing="0" width="85%" align="center">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Kelamin</th>
+                <th>Umur</th>
+                <th>Jabatan</th>
+                <th>Shift Kerja</th>
+                <th>Gaji per bulan</th>
+            </tr>
+        </thead>
+        <tbody id="pegawai-body">
+        </tbody>
+    </table>
+    
+    <script>
+        const pegawai = [
+        { nama: "David", kelamin: "Laki-laki",umur: 30, jabatan: "Pramugara", shift: "Malam", gaji: "Rp. 25.000.000" },
+        { nama: "Isaac", kelamin: "Laki-laki",umur: 26, jabatan: "Marshaller", shift: "Malam", gaji: "Rp. 5.000.000" },
+        { nama: "Eric", kelamin: "Laki-laki",umur: 31, jabatan: "Air Traffic Controller (ATC)", shift: "Pagi", gaji: "Rp. 15.000.000" },
+        { nama: "Albert", kelamin: "Laki-laki",umur: 37, jabatan: "Pilot", shift: "Siang", gaji: "Rp. 60.000.000" },
+        { nama: "Alex", kelamin: "Laki-laki",umur: 41, jabatan: "AVSEC (Aviation Security)", shift: "Pagi", gaji: "Rp. 15.000.000" }
+        ];
+
+        const tbody = document.getElementById("pegawai-body");
+
+        pegawai.forEach(p => {
+            let row = `<tr class="data">
+                <td>${p.nama}</td>
+                <td>${p.kelamin}</td>
+                <td>${p.umur}</td>
+                <td>${p.jabatan}</td>
+                <td>${p.shift}</td>
+                <td>${p.gaji}</td>
+            </tr>`;
+            tbody.innerHTML += row;
+        });
+    </script>
+</body>
+</html>
